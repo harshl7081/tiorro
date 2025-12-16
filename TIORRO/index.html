@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TIORRO — Modern Precious Metals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="top-nav">
+        <img src="logo.svg" alt="TIORRO wordmark" class="top-nav__wordmark" />
+        <div class="top-nav__center">
+          <div class="top-nav__links">
+            <a href="#collections">Collections</a>
+            <a href="#about">About</a>
+            <a href="#process">Process</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="top-nav__right">
+          <a class="btn btn--ghost btn--small" href="#contact">Book visit</a>
+          <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+      <div class="hero__backdrop">
+        <div class="hero__glow hero__glow--platinum"></div>
+        <div class="hero__glow hero__glow--titanium"></div>
+      </div>
+      <div class="hero__content">
+        <img src="logo.svg" alt="TIORRO logo" class="hero__logo" />
+        <p class="hero__tagline">Bespoke jewelry in Platinum, Silver, and Titanium.</p>
+        <div class="hero__metrics">
+          <div>
+            <strong>24</strong>
+            <span>limited drops / year</span>
+          </div>
+          <div>
+            <strong>72h</strong>
+            <span>concierge response</span>
+          </div>
+          <div>
+            <strong>3</strong>
+            <span>metals perfected</span>
+          </div>
+        </div>
+        <div class="hero__ctas">
+          <a class="btn btn--primary" href="#collections">Explore metals</a>
+          <a class="btn btn--ghost" href="#contact">Request a consultation</a>
+        </div>
+      </div>
+      <div class="scroll-indicator">Scroll to discover</div>
+    </header>
+
+    <main>
+      <section id="collections" class="collections">
+        <header>
+          <p class="eyebrow">Signature Metals</p>
+          <h2>Platinum · Argent · Titanium</h2>
+          <p class="lede">
+            Sculpted for permanence. Each collection balances modern forms with artisanal finish,
+            honoring the intrinsic character of PT, AG, and TI.
+          </p>
+        </header>
+        <div class="collections__grid">
+          <article class="collection-card collection-card--platinum">
+            <div class="card__header">
+              <p class="eyebrow">PT</p>
+              <h3>Platinum Reverie</h3>
+            </div>
+            <p>
+              Monochromatic glow, seamless lines. Platinum pieces forged for life’s defining moments with
+              uncompromising weight and balance.
+            </p>
+            <button class="btn-link">View platinum atelier →</button>
+          </article>
+          <article class="collection-card collection-card--silver">
+            <div class="card__header">
+              <p class="eyebrow">AG</p>
+              <h3>Argent Halo</h3>
+            </div>
+            <p>
+              Mirror-polished silver with a whisper of patina. Designed for effortless layering and luminous everyday statements.
+            </p>
+            <button class="btn-link">View silver atelier →</button>
+          </article>
+          <article class="collection-card collection-card--titanium">
+            <div class="card__header">
+              <p class="eyebrow">TI</p>
+              <h3>Titanium Veil</h3>
+            </div>
+            <p>
+              Lightweight strength with smoked gradients. Titanium silhouettes that move with you, engineered for the avant-garde.
+            </p>
+            <button class="btn-link">View titanium atelier →</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="about__content">
+          <div class="about__text">
+            <p class="eyebrow">House Statement</p>
+            <h2>Precision craft, quiet opulence.</h2>
+            <p>
+              TIORRO pairs European goldsmithing techniques with future-forward metallurgy. Every piece is
+              rendered in small editions, individually finished, and tracked from source to presentation.
+            </p>
+            <p>
+              Founded in 2024, TIORRO emerged from a vision to bridge traditional craftsmanship with contemporary
+              design. Our atelier operates on principles of ethical sourcing, artisanal excellence, and
+              uncompromising quality. Each creation tells a story of transformation—from raw metal to heirloom.
+            </p>
+            <ul class="story__highlights">
+              <li>
+                <strong>Traceable sourcing</strong>
+                <span>Certified PT/AG/TI supply partners with conflict-free documentation.</span>
+              </li>
+              <li>
+                <strong>Hand-finished</strong>
+                <span>Polished, brushed, or cerakoted surfaces refined by master artisans.</span>
+              </li>
+              <li>
+                <strong>Private commissions</strong>
+                <span>Custom builds for engagements, launches, and capsule drops.</span>
+              </li>
+              <li>
+                <strong>Sustainable practices</strong>
+                <span>Zero-waste production and carbon-neutral shipping worldwide.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="about__visual">
+            <div class="about__stat">
+              <strong>2024</strong>
+              <span>Founded</span>
+            </div>
+            <div class="about__stat">
+              <strong>500+</strong>
+              <span>Pieces crafted</span>
+            </div>
+            <div class="about__stat">
+              <strong>98%</strong>
+              <span>Client satisfaction</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="process">
+        <header>
+          <p class="eyebrow">The Journey</p>
+          <h2>From concept to heirloom</h2>
+          <p class="lede">
+            Every TIORRO piece follows a meticulous seven-step process, ensuring each creation meets our
+            exacting standards of beauty and durability.
+          </p>
+        </header>
+        <div class="process__steps">
+          <div class="process__step">
+            <div class="step__number">01</div>
+            <h3>Consultation</h3>
+            <p>Initial meeting to understand your vision, lifestyle, and aesthetic preferences. We discuss metal
+              selection, design direction, and timeline.</p>
+          </div>
+          <div class="process__step">
+            <div class="step__number">02</div>
+            <h3>Design & Sketching</h3>
+            <p>Our designers create hand-drawn sketches and digital renderings. You review iterations until the
+              perfect form emerges.</p>
+          </div>
+          <div class="process__step">
+            <div class="step__number">03</div>
+            <h3>3D Modeling</h3>
+            <p>Precise CAD models are generated, allowing you to preview the piece in augmented reality before
+              any metal is cast.</p>
+          </div>
+          <div class="process__step">
+            <div class="step__number">04</div>
+            <h3>Prototyping</h3>
+            <p>A wax or resin prototype is created for tactile review. Adjustments to weight, balance, and
+              proportions are made.</p>
+          </div>
+          <div class="process__step">
+            <div class="step__number">05</div>
+            <h3>Casting & Forging</h3>
+            <p>Master craftspeople cast or forge your piece using traditional techniques enhanced by modern
+              precision tools.</p>
+          </div>
+          <div class="process__step">
+            <div class="step__number">06</div>
+            <h3>Finishing</h3>
+            <p>Hand-polishing, brushing, or specialized surface treatments are applied. Each finish is unique to
+              the metal and design.</p>
+          </div>
+          <div class="process__step">
+            <div class="step__number">07</div>
+            <h3>Quality & Delivery</h3>
+            <p>Final inspection, certification, and archival documentation. Your piece arrives with a care guide
+              and lifetime service guarantee.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="experience" id="experience">
+        <div class="experience__media">
+          <div class="media-panel media-panel--platinum">
+            <span>PT Glow</span>
+          </div>
+          <div class="media-panel media-panel--titanium">
+            <span>TI Silhouette</span>
+          </div>
+        </div>
+        <div class="experience__content">
+          <p class="eyebrow">Atelier Ritual</p>
+          <h2>Private fittings, 3D proofs, archival care.</h2>
+          <p>
+            Appointments unfold over espresso and sketches. Clients preview renders under true daylight,
+            confirm sizing with tactile mockups, and leave with a care dossier for heirloom longevity.
+          </p>
+          <ul class="experience__list">
+            <li>
+              <strong>Immersive fittings</strong>
+              <span>Adjust proportions live with our master jeweler.</span>
+            </li>
+            <li>
+              <strong>Digital twins</strong>
+              <span>Receive AR-ready models before final casting.</span>
+            </li>
+            <li>
+              <strong>Lifetime detailing</strong>
+              <span>Complimentary refinishing and inspections.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="lookbook">
+        <header>
+          <p class="eyebrow">Lookbook</p>
+          <h2>Light studies in PT · AG · TI</h2>
+        </header>
+        <div class="lookbook__grid">
+          <figure class="lookbook__tile lookbook__tile--vertical">
+            <figcaption>Architected cuffs · PT</figcaption>
+          </figure>
+          <figure class="lookbook__tile">
+            <figcaption>Molten links · AG</figcaption>
+          </figure>
+          <figure class="lookbook__tile lookbook__tile--wide">
+            <figcaption>Smoke-brushed hoops · TI</figcaption>
+          </figure>
+          <figure class="lookbook__tile">
+            <figcaption>Geometric stackers · PT/AG</figcaption>
+          </figure>
+          <figure class="lookbook__tile">
+            <figcaption>Minimalist bands · PT</figcaption>
+          </figure>
+          <figure class="lookbook__tile lookbook__tile--vertical">
+            <figcaption>Layered necklaces · AG</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <header>
+          <p class="eyebrow">Client Stories</p>
+          <h2>Voices from the atelier</h2>
+        </header>
+        <div class="testimonials__grid">
+          <blockquote class="testimonial">
+            <p>"TIORRO transformed my grandmother's platinum into a modern statement piece. The attention to detail
+              and the entire process was extraordinary."</p>
+            <footer>
+              <strong>Sarah Chen</strong>
+              <span>New York</span>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"I commissioned a titanium engagement ring that defies convention. Lightweight, durable, and
+              absolutely stunning. The team made the process seamless."</p>
+            <footer>
+              <strong>Marcus Rivera</strong>
+              <span>Los Angeles</span>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"The silver collection exceeded expectations. Each piece feels like a work of art. TIORRO's
+              commitment to quality is evident in every detail."</p>
+            <footer>
+              <strong>Elena Volkov</strong>
+              <span>London</span>
+            </footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact__panel">
+          <p class="eyebrow">Visit the atelier</p>
+          <h2>Reserve a private viewing</h2>
+          <p>
+            Share your intention and our concierge will confirm a time to explore PT, AG, or TI creations with you.
+          </p>
+          <form class="contact__form">
+            <label>
+              <span>Name</span>
+              <input name="name" type="text" placeholder="Your name" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input name="email" type="email" placeholder="you@domain.com" required />
+            </label>
+            <label>
+              <span>Metal focus</span>
+              <select name="metal">
+                <option>Platinum (PT)</option>
+                <option>Silver (AG)</option>
+                <option>Titanium (TI)</option>
+                <option>Mixed</option>
+              </select>
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="3" placeholder="Tell us about your piece"></textarea>
+            </label>
+            <button type="submit" class="btn btn--primary">Send request</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h3>TIORRO</h3>
+          <p>Crafted in limited numbers. Each piece is a testament to precision, artistry, and enduring beauty.</p>
+          <div class="footer__social">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://pinterest.com" target="_blank" rel="noreferrer" aria-label="Pinterest">Pinterest</a>
+            <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter">Twitter</a>
+          </div>
+        </div>
+        <div class="footer__section">
+          <h4>Collections</h4>
+          <ul>
+            <li><a href="#collections">Platinum</a></li>
+            <li><a href="#collections">Silver</a></li>
+            <li><a href="#collections">Titanium</a></li>
+            <li><a href="#collections">Custom Commissions</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Atelier</h4>
+          <ul>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Book a Visit</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:atelier@tiorro.com">atelier@tiorro.com</a></li>
+            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+            <li>By appointment only</li>
+            <li>Worldwide shipping</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2024 TIORRO. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
