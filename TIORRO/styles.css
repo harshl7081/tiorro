@@ -21,7 +21,9 @@
 body {
   margin: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  background: radial-gradient(circle at top, #ffffff 0%, var(--color-bg) 60%);
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.12), rgba(24, 24, 27, 0.95)),
+    radial-gradient(circle at bottom, rgba(148, 163, 184, 0.18), #020617);
   color: var(--color-text);
   line-height: 1.7;
   min-height: 100vh;
@@ -53,8 +55,8 @@ a {
 }
 
 .top-nav {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
   align-items: center;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -62,10 +64,11 @@ a {
   color: #fff;
   position: relative;
   z-index: 2;
-  padding: 1.5rem 0;
+  padding: 1.5rem clamp(1.5rem, 5vw, 4rem);
   width: 100%;
   backdrop-filter: blur(10px);
   background: rgba(5, 5, 5, 0.3);
+  gap: 2rem;
 }
 
 .top-nav__logo {
@@ -78,6 +81,7 @@ a {
   filter: brightness(0) invert(1) drop-shadow(0 4px 12px rgba(255, 255, 255, 0.4));
   opacity: 1;
   transition: transform var(--transition), filter var(--transition);
+  justify-self: start;
 }
 
 .top-nav__wordmark:hover {
@@ -86,10 +90,11 @@ a {
 }
 
 .top-nav__center {
-  flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  justify-self: start;
+  margin-left: 2rem;
 }
 
 .top-nav__links {
@@ -125,6 +130,7 @@ a {
   display: flex;
   align-items: center;
   gap: 1rem;
+  justify-self: end;
 }
 
 .mobile-menu-toggle {
@@ -188,8 +194,9 @@ a {
   }
 
   .top-nav {
-    padding: 1rem 0;
-    flex-wrap: nowrap;
+    padding: 1rem clamp(1rem, 4vw, 2rem);
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
   }
 
   .top-nav__center {
@@ -198,11 +205,10 @@ a {
 
   .top-nav__right {
     gap: 0.5rem;
-    flex-shrink: 0;
   }
 
   .top-nav__wordmark {
-    flex-shrink: 0;
+    width: clamp(120px, 22vw, 180px);
   }
 
   .top-nav__links {
@@ -492,29 +498,65 @@ a {
 .hero__content {
   position: relative;
   z-index: 2;
-  text-align: center;
-  max-width: 700px;
-  margin: auto;
-  color: #fff;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 2rem 0;
   flex: 1;
 }
 
+.hero__panel {
+  width: 100%;
+  max-width: 720px;
+  padding: 2.5rem 2.75rem 2.5rem;
+  border-radius: 28px;
+  border: 1px solid rgba(248, 250, 252, 0.18);
+  background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.18), rgba(15, 23, 42, 0.8))
+      border-box;
+  box-shadow:
+    0 24px 80px rgba(15, 23, 42, 0.75),
+    0 0 0 1px rgba(148, 163, 184, 0.25);
+  backdrop-filter: blur(26px);
+  text-align: center;
+  color: #f9fafb;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.25), rgba(15, 23, 42, 0.9));
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(226, 232, 240, 0.9);
+  margin: 0 auto 1.5rem;
+}
+
+.hero__badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: radial-gradient(circle, #22c55e, #14532d);
+  box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.14);
+}
+
 .hero__logo {
-  width: clamp(320px, 28vw, 460px);
-  margin: 0 auto 2rem;
-  filter: brightness(0) invert(1) drop-shadow(0 20px 40px rgba(255, 255, 255, 0.4));
+  width: min(80%, 640px);
+  margin: 0 auto 2.5rem;
+  filter: brightness(1.1) drop-shadow(0 18px 38px rgba(15, 23, 42, 0.9));
   opacity: 1;
   transition: transform var(--transition), filter var(--transition);
-  animation: logoFloat 6s ease-in-out infinite;
+  animation: logoFloat 7s ease-in-out infinite;
 }
 
 .hero__logo:hover {
-  transform: scale(1.05);
-  filter: brightness(0) invert(1) drop-shadow(0 30px 50px rgba(255, 255, 255, 0.5));
+  transform: translateY(-3px) scale(1.02);
+  filter: brightness(1.2) drop-shadow(0 26px 55px rgba(15, 23, 42, 1));
 }
 
 @keyframes logoFloat {
@@ -528,11 +570,11 @@ a {
 
 .hero__tagline {
   font-size: 1.35rem;
-  letter-spacing: 0.05em;
-  margin-bottom: 3rem;
-  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.03em;
+  margin-bottom: 2.25rem;
+  color: rgba(241, 245, 249, 0.96);
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
 .hero__ctas {
@@ -545,51 +587,178 @@ a {
 .hero__metrics {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  gap: 2.5rem;
+  margin-bottom: 2.25rem;
   flex-wrap: wrap;
 }
 
 .hero__metrics > div {
-  text-align: center;
-  min-width: 100px;
+  text-align: left;
+  min-width: 140px;
 }
 
 .hero__metrics strong {
   display: block;
-  font-size: 2rem;
-  font-family: 'Cormorant Garamond', serif;
-  letter-spacing: 0.15em;
-  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+  color: rgba(226, 232, 240, 0.9);
 }
 
 .hero__metrics span {
   display: block;
   font-size: 0.8rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  line-height: 1.4;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  color: rgba(148, 163, 184, 0.95);
 }
 
+.hero__note {
+  margin-top: 2.25rem;
+  font-size: 0.85rem;
+  color: rgba(148, 163, 184, 0.95);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  animation: float 2.8s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
   .scroll-indicator {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.8);
-    animation: float 2.8s ease-in-out infinite;
+    font-size: 0.65rem;
+    bottom: 1rem;
+    letter-spacing: 0.25em;
+  }
+}
+
+.coming-banner {
+  position: relative;
+  z-index: 3;
+  padding: 3rem clamp(1.75rem, 6vw, 4rem) 4rem;
+  background: transparent;
+}
+
+.coming-banner__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem clamp(2rem, 4vw, 3rem);
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.92), rgba(2, 6, 23, 0.98));
+  box-shadow:
+    0 18px 55px rgba(15, 23, 42, 0.85),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+}
+
+.coming-banner__eyebrow {
+  color: rgba(148, 163, 184, 0.95);
+}
+
+.coming-banner h2 {
+  margin: 0 0 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.25rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #f9fafb;
+}
+
+.coming-banner__lede {
+  margin: 0 0 2.25rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(148, 163, 184, 0.96);
+  max-width: 40rem;
+}
+
+.coming-banner__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.coming-banner__meta > div {
+  min-width: 140px;
+}
+
+.coming-banner__meta .label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(148, 163, 184, 0.9);
+  margin-bottom: 0.3rem;
+}
+
+.coming-banner__meta strong {
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  color: #e5e7eb;
+}
+
+.coming-banner__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.coming-banner .btn--primary {
+  background: #f9fafb;
+  color: #020617;
+  border-color: transparent;
+  box-shadow: 0 10px 32px rgba(15, 23, 42, 0.8);
+}
+
+.coming-banner .btn--primary:hover {
+  background: #e5e7eb;
+}
+
+.coming-banner .btn--ghost {
+  border-color: rgba(148, 163, 184, 0.7);
+  color: #e5e7eb;
+}
+
+@media (max-width: 768px) {
+  .coming-banner {
+    padding: 2.5rem 1.5rem 3rem;
   }
 
-  @media (max-width: 768px) {
-    .scroll-indicator {
-      font-size: 0.65rem;
-      bottom: 1rem;
-      letter-spacing: 0.25em;
-    }
+  .coming-banner__inner {
+    padding: 2rem 1.5rem 2rem;
   }
+
+  .coming-banner h2 {
+    font-size: 1.7rem;
+  }
+
+  .coming-banner__lede {
+    margin-bottom: 1.75rem;
+  }
+
+  .coming-banner__meta {
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .coming-banner__ctas {
+    flex-direction: column;
+  }
+}
 
 .btn {
   border: 1.5px solid var(--color-text);
@@ -1242,7 +1411,7 @@ textarea {
   }
 
   .hero__logo {
-    width: 160px;
+    width: 240px;
   }
 
   .hero__tagline {
